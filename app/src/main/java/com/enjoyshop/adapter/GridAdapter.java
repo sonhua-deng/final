@@ -1,4 +1,4 @@
-package com.myxh.coolshopping.ui.adapter;
+package com.enjoyshop.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,14 +8,11 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.myxh.coolshopping.R;
-import com.myxh.coolshopping.entity.HomeGridInfo;
+import com.enjoyshop.R;
+import com.enjoyshop.data.HomeGridInfo;
 
 import java.util.List;
 
-/**
- * Created by asus on 2016/8/31.
- */
 public class GridAdapter extends BaseAdapter {
 
     private Context mContext;

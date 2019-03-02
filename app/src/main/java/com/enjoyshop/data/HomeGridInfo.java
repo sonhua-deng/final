@@ -1,13 +1,11 @@
-package com.myxh.coolshopping.entity;
+package com.enjoyshop.data;
 
 import android.support.annotation.StringRes;
 
-/**
- * Created by asus on 2016/8/31.
- */
 public class HomeGridInfo {
 
-    private @StringRes int gridIcon;
+    private @StringRes
+    int gridIcon;
     private String gridTitle;
 
     public HomeGridInfo(int gridIcon, String gridTitle) {
