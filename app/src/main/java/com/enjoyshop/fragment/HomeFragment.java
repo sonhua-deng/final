@@ -3,11 +3,11 @@ package com.enjoyshop.fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.TypedArray;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
@@ -29,6 +29,7 @@ import com.enjoyshop.helper.DividerItemDecortion;
 import com.enjoyshop.widget.EnjoyshopToolBar;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.library.tabstrip.PagerSlidingTabStrip;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 import com.youth.banner.loader.ImageLoader;
@@ -55,29 +56,28 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
 
     @BindView(R.id.toolbar)
     EnjoyshopToolBar mToolBar;
-    @BindView(R.id.recyclerview)
-    RecyclerView     mRecyclerView;
+    @BindView(R.id.banner)
+    Banner  mBanner;
+    @BindView(R.id.view_pager)
+    ViewPager mViewPager;
     @BindView(R.id.home_gridView)
     GridView gridView1;
-    private Banner           mBanner;
+    @BindView(R.id.tab_strip)
+    PagerSlidingTabStrip mTabStrip;
+
     private HomeCatgoryAdapter mAdatper;
     private List<String>           images = new ArrayList<>();
     private List<String>           titles = new ArrayList<>();
     private List<HomeCampaignBean> datas  = new ArrayList<>();
     private Gson                   gson   = new Gson();
-    View viewHeader;
     private List<HomeGridInfo> pageOneData = new ArrayList<>();
 
     @Override
     protected void init() {
 
-        viewHeader = LayoutInflater.from(getActivity()).inflate(R.layout
-                .header_fragment_home, (ViewGroup) mRecyclerView.getParent(), false);
-        mBanner = viewHeader.findViewById(R.id.banner);
-
         initView();
         requestBannerData();     //请求轮播图数据
-        requestCampaignData();     //请求商品详情数据
+        //requestCampaignData();     //请求商品详情数据
     }
 
     @Override
@@ -114,7 +114,12 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
 
             }
         });
-
+        FragmentManager fragmentManager = getChildFragmentManager();
+        mViewPager.setAdapter(new MyPagerAdapter(fragmentManager));
+        mViewPager.setCurrentItem(0);
+        //当ViewPager的onPagerChangeListener回调时，PagerSlidingTabStrip也一起随之变动
+        //具体做法都已封装到了PagerSlidingTabStrip.setViewPager()方法里，使用时调用实例如下
+        mTabStrip.setViewPager(mViewPager);
     }
 
 
@@ -132,71 +137,98 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
         mBanner.start();
     }
 
-
     /**
-     * 首页商品数据
+     * 自定义适配器
      */
-
-    private Long defaultId = 0L;
-
-    private void setRecyclerViewData() {
-
-        for (int i = 0; i < datas.size(); i++) {
-            if (i % 2 == 0) {
-                //左边样式的item
-                datas.get(i).setItemType(HomeCampaignBean.ITEM_TYPE_LEFT);
+    class MyPagerAdapter extends FragmentPagerAdapter {
+        //根据需求定义构造方法，方便外部调用
+        public MyPagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+        //设置每页的标题
+        @Override
+        public CharSequence getPageTitle(int position) {
+            if (position == 0) {
+                return "平台";
             } else {
-                //右边样式的item
-                datas.get(i).setItemType(HomeCampaignBean.ITEM_TYPE_RIGHT);
+                return "个人";
             }
         }
-
-        mAdatper = new HomeCatgoryAdapter(datas);
-        mRecyclerView.setAdapter(mAdatper);
-        mRecyclerView.addItemDecoration(new DividerItemDecortion());
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        mAdatper.addHeaderView(viewHeader);
-
-        mAdatper.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                HomeCampaignBean campaign = (HomeCampaignBean) adapter.getData().get(position);
-                Intent intent = new Intent(getContext(), GoodsListActivity.class);
-                intent.putExtra(Contants.COMPAINGAIN_ID, campaign.getId());
-                startActivity(intent);
-            }
-        });
-
-        mAdatper.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
-            @Override
-            public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
-
-                HomeCampaignBean bean = (HomeCampaignBean) adapter.getData().get(position);
-                Long oneId = bean.getCpOne().getId();
-                Long twoId = bean.getCpTwo().getId();
-                Long threeId = bean.getCpThree().getId();
-
-
-                switch (view.getId()){
-                    case R.id.imgview_big:
-                        defaultId=oneId;
-                        break;
-                    case R.id.imgview_small_top:
-                        defaultId=twoId;
-                        break;
-                    case R.id.imgview_small_bottom:
-                        defaultId=threeId;
-                        break;
-                }
-
-                Intent intent = new Intent(getContext(), GoodsListActivity.class);
-                intent.putExtra(Contants.COMPAINGAIN_ID, defaultId);
-                startActivity(intent);
-
-            }
-        });
-
+        //设置每一页对应的fragment
+        @Override
+        public Fragment getItem(int position) {
+            return new HotFragment();
+        }
+        //fragment的数量
+        @Override
+        public int getCount() {
+            return 2;
+        }
     }
+//    /**
+//     * 首页商品数据
+//     */
+//
+//    private Long defaultId = 0L;
+//
+//    private void setRecyclerViewData() {
+//
+//        for (int i = 0; i < datas.size(); i++) {
+//            if (i % 2 == 0) {
+//                //左边样式的item
+//                datas.get(i).setItemType(HomeCampaignBean.ITEM_TYPE_LEFT);
+//            } else {
+//                //右边样式的item
+//                datas.get(i).setItemType(HomeCampaignBean.ITEM_TYPE_RIGHT);
+//            }
+//        }
+//
+//        mAdatper = new HomeCatgoryAdapter(datas);
+//        mRecyclerView.setAdapter(mAdatper);
+//        mRecyclerView.addItemDecoration(new DividerItemDecortion());
+//        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+//        mAdatper.addHeaderView(viewHeader);
+//
+//        mAdatper.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+//                HomeCampaignBean campaign = (HomeCampaignBean) adapter.getData().get(position);
+//                Intent intent = new Intent(getContext(), GoodsListActivity.class);
+//                intent.putExtra(Contants.COMPAINGAIN_ID, campaign.getId());
+//                startActivity(intent);
+//            }
+//        });
+//
+//        mAdatper.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
+//            @Override
+//            public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+//
+//                HomeCampaignBean bean = (HomeCampaignBean) adapter.getData().get(position);
+//                Long oneId = bean.getCpOne().getId();
+//                Long twoId = bean.getCpTwo().getId();
+//                Long threeId = bean.getCpThree().getId();
+//
+//
+//                switch (view.getId()){
+//                    case R.id.imgview_big:
+//                        defaultId=oneId;
+//                        break;
+//                    case R.id.imgview_small_top:
+//                        defaultId=twoId;
+//                        break;
+//                    case R.id.imgview_small_bottom:
+//                        defaultId=threeId;
+//                        break;
+//                }
+//
+//                Intent intent = new Intent(getContext(), GoodsListActivity.class);
+//                intent.putExtra(Contants.COMPAINGAIN_ID, defaultId);
+//                startActivity(intent);
+//
+//            }
+//        });
+//
+//    }
 
 
     /**
@@ -232,37 +264,37 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
     }
 
 
-    /**
-     * 商品分类数据
-     */
-    private void requestCampaignData() {
-
-        OkHttpUtils.get().url(HttpContants.HOME_CAMPAIGN_URL)
-                .addParams("type", "1")
-                .build().execute(new StringCallback() {
-
-            @Override
-            public void onError(Call call, Exception e, int id) {
-
-            }
-
-            @Override
-            public void onResponse(String response, int id) {
-
-                Type collectionType = new TypeToken<Collection<HomeCampaignBean>>() {
-                }.getType();
-                Collection<HomeCampaignBean> enums = gson.fromJson(response,
-                        collectionType);
-                Iterator<HomeCampaignBean> iterator = enums.iterator();
-                while (iterator.hasNext()) {
-                    HomeCampaignBean bean = iterator.next();
-                    datas.add(bean);
-                }
-
-                setRecyclerViewData();
-            }
-        });
-    }
+//    /**
+//     * 商品分类数据
+//     */
+//    private void requestCampaignData() {
+//
+//        OkHttpUtils.get().url(HttpContants.HOME_CAMPAIGN_URL)
+//                .addParams("type", "1")
+//                .build().execute(new StringCallback() {
+//
+//            @Override
+//            public void onError(Call call, Exception e, int id) {
+//
+//            }
+//
+//            @Override
+//            public void onResponse(String response, int id) {
+//
+//                Type collectionType = new TypeToken<Collection<HomeCampaignBean>>() {
+//                }.getType();
+//                Collection<HomeCampaignBean> enums = gson.fromJson(response,
+//                        collectionType);
+//                Iterator<HomeCampaignBean> iterator = enums.iterator();
+//                while (iterator.hasNext()) {
+//                    HomeCampaignBean bean = iterator.next();
+//                    datas.add(bean);
+//                }
+//
+//                setRecyclerViewData();
+//            }
+//        });
+//    }
 
 
     @Override

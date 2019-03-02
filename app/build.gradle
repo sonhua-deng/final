@@ -69,7 +69,7 @@ dependencies {
     implementation 'com.android.support:recyclerview-v7:27.1.1'
     implementation 'com.android.support:cardview-v7:27.1.1'
     implementation 'com.android.support:design:27.1.1'
-
+    compile 'com.github.gb-nick:PagerSlidingTabStrip:v1.0.5'
 
     implementation 'com.zhy:okhttputils:2.6.2'
 
