@@ -1,33 +1,42 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
               xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:clipToPadding="true"
               android:fitsSystemWindows="true"
-              android:orientation="vertical"
-              tools:context="com.enjoyshop.activity.MainActivity"
-    >
-
-    <FrameLayout
-        android:id="@+id/realtabcontent"
+              tools:context="com.enjoyshop.activity.MainActivity">
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="@color/bg_color"
-        />
-
-    <com.enjoyshop.widget.FragmentTabHost
-        android:id="@android:id/tabhost"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        >
-
+        android:layout_height="match_parent"
+        android:orientation="vertical">
         <FrameLayout
-            android:id="@android:id/tabcontent"
-            android:layout_width="0dp"
+            android:id="@+id/realtabcontent"
+            android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0"
+            android:layout_weight="1"
+            android:background="@color/bg_color"
             />
-    </com.enjoyshop.widget.FragmentTabHost>
-</LinearLayout>
+
+        <com.enjoyshop.widget.FragmentTabHost
+            android:id="@android:id/tabhost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            >
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="0"
+                />
+        </com.enjoyshop.widget.FragmentTabHost>
+    </LinearLayout>
+    <ImageView
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/iv_post"
+        android:src="@drawable/icon_publish"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp" />
+</RelativeLayout>

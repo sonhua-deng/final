@@ -7,15 +7,15 @@
     android:orientation="vertical"
     >
 
-    <com.enjoyshop.widget.EnjoyshopToolBar
-        android:id="@id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
-        android:minHeight="?attr/actionBarSize"
-        app:isShowLeftIcon="false"
-        app:isShowSearchView="true"
-        />
+    <!--<com.enjoyshop.widget.EnjoyshopToolBar-->
+        <!--android:id="@id/toolbar"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="?attr/colorPrimary"-->
+        <!--android:minHeight="?attr/actionBarSize"-->
+        <!--app:isShowLeftIcon="false"-->
+        <!--app:isShowSearchView="true"-->
+        <!--/>-->
 
     <com.cjj.MaterialRefreshLayout
         android:id="@+id/refresh_view"

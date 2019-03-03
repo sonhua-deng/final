@@ -1,19 +1,18 @@
 package com.enjoyshop.activity;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TabHost;
-import android.widget.TextView;
 
 import com.enjoyshop.R;
 import com.enjoyshop.bean.MessageEvent;
 import com.enjoyshop.bean.Tab;
-import com.enjoyshop.fragment.CategoryFragment;
 import com.enjoyshop.fragment.HomeFragment;
-import com.enjoyshop.fragment.HotFragment;
 import com.enjoyshop.fragment.MineFragment;
 import com.enjoyshop.fragment.ShopCartFragment;
 import com.enjoyshop.utils.ToastUtils;
@@ -30,7 +29,7 @@ import java.util.List;
  * Describe:整个app的主入门
  */
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     private FragmentTabHost mTabhost;
     private LayoutInflater  mInflater;
@@ -45,6 +44,8 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void init() {
+        ImageView imageView = findViewById(R.id.iv_post);
+        imageView.setOnClickListener(this);
         initTab();
     }
 
@@ -56,46 +57,48 @@ public class MainActivity extends BaseActivity {
     private void initTab() {
 
         Tab tab_home = new Tab(HomeFragment.class, R.string.home, R.drawable.selector_icon_home);
-        Tab tab_hot = new Tab(HotFragment.class, R.string.hot, R.drawable.selector_icon_hot);
-        Tab tab_category = new Tab(CategoryFragment.class, R.string.catagory, R.drawable
-                .selector_icon_category);
-        Tab tab_shop = new Tab(ShopCartFragment.class, R.string.cart, R.drawable
-                .selector_icon_cart);
+//        Tab tab_hot = new Tab(HotFragment.class, R.string.hot, R.drawable.selector_icon_hot);
+//        Tab tab_category = new Tab(CategoryFragment.class, R.string.catagory, R.drawable
+//                .selector_icon_category);
+//        Tab tab_shop = new Tab(ShopCartFragment.class, R.string.cart, R.drawable
+//                .selector_icon_cart);
+       // Tab tab_publish = new Tab(PhotoFragment.class, R.string.publish, R.drawable.icon_publish);
         Tab tab_mine = new Tab(MineFragment.class, R.string.mine, R.drawable.selector_icon_mine);
 
         mTabs.add(tab_home);
-        mTabs.add(tab_hot);
-        mTabs.add(tab_category);
-        mTabs.add(tab_shop);
+        //mTabs.add(tab_publish);
+//        mTabs.add(tab_category);
+//        mTabs.add(tab_shop);
         mTabs.add(tab_mine);
 
         mInflater = LayoutInflater.from(this);
         mTabhost = (FragmentTabHost) this.findViewById(android.R.id.tabhost);
         mTabhost.setup(this, getSupportFragmentManager(), R.id.realtabcontent);
-
+        int i = 0;
         for (Tab tab : mTabs) {
             TabHost.TabSpec tabSpec = mTabhost.newTabSpec(getString(tab.getTitle()));
-            tabSpec.setIndicator(buildIndicator(tab));
+            tabSpec.setIndicator(buildIndicator(tab,i));
+            i++;
             mTabhost.addTab(tabSpec, tab.getFragment(), null);
         }
 
 
         mTabhost.getTabWidget().setShowDividers(LinearLayout.SHOW_DIVIDER_NONE);
         mTabhost.setCurrentTab(0);           //默认选中第0个
-
     }
 
 
 
-    private View buildIndicator(Tab tab) {
+    private View buildIndicator(Tab tab, int i) {
 
         View view = mInflater.inflate(R.layout.tab_indicator, null);
         ImageView img = (ImageView) view.findViewById(R.id.icon_tab);
-        TextView text = (TextView) view.findViewById(R.id.txt_indicator);
-
+        if (i == 0) {
+            view.setPadding(dp2px(this,0),0,0,0);
+        } else {
+            view.setPadding(0,0,dp2px(this,0),0);
+        }
         img.setImageResource(tab.getIcon());
-        text.setText(tab.getTitle());
-
         return view;
     }
 
@@ -130,5 +133,23 @@ public class MainActivity extends BaseActivity {
             return true;
         }
         return super.onKeyDown(keyCode, event);
+    }
+    @Override
+    public void onClick(View view) {
+        if (view.getId() == R.id.iv_post) {
+            Intent intent = new Intent(MainActivity.this,PublishActivity.class);
+            startActivity(intent);
+        }
+    }
+
+    /**
+     * dp 转 px
+     *
+     * @param dpVal
+     * @return
+     */
+    public static int dp2px(Context context, float dpVal) {
+        final float scale = context.getResources().getDisplayMetrics().density;
+        return (int) (dpVal * scale + 0.5f);
     }
 }

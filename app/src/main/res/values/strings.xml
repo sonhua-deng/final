@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">轻松购</string>
+    <string name="app_name">第七当铺</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
@@ -8,6 +8,7 @@
     <string name="hot">热卖</string>
     <string name="catagory">分类</string>
     <string name="cart">购物车</string>
+    <string name="publish">卖二手</string>
     <string name="mine">我的</string>
     <string name="title_activity_ware_detail">WareDetailActivity</string>
     <string name="share">分享</string>
@@ -26,5 +27,8 @@
     <string name="add_addresses">新建收件地址</string>
 
     <string name="code_end">请重新发送验证码</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

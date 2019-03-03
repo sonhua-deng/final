@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+    <color name="colorAccent">#FFFF3C6B</color>
+    <color name="colorAccent_transparent_50">#80FF3C6B</color>
     <color name="white">#ffffff</color>
     <!-- 白色 -->
     <color name="ivory">#fffff0</color>
@@ -375,4 +376,12 @@
     <!--userInfo font  主字体 颜色 -->
     <color name="userInfo_font">#505050</color>
 
+    <color name="bar_grey">#393a3e</color>
+    <color name="color_f6">#f6f6f6</color>
+    <color name="color_fa">#fafafa</color>
+    <color name="divider">#B6B6B6</color>
+    <color name="color_c51">#f94c51</color>
+    <color name="color_green">#43c117</color>
+    <color name="colorD5D5D5">#D5D5D5</color>
+    <color name="bg_common_gray">#ffe2e2e2</color>
 </resources>

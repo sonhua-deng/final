@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/colorAccent">
+
+        <ImageView
+            android:id="@+id/left_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:background="@color/transparent"
+            android:padding="15dp"
+            android:src="@drawable/picture_back"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:ellipsize="end"
+            android:maxEms="11"
+            android:text="发布宝贝"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_right"
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:overScrollMode="never" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="@color/colorD5D5D5"/>
+
+        <EditText
+            android:id="@+id/et_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:paddingLeft="15dp"
+            android:singleLine="true"
+            android:background="@color/white"
+            android:textColor="@color/black"
+            android:hint="宝贝标题"/>
+
+        <EditText
+            android:id="@+id/et_des"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@color/white"
+            android:paddingLeft="15dp"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:hint="内容详细描述"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="@color/colorD5D5D5"/>
+
+        <RelativeLayout
+            android:id="@+id/rl_lei"
+            style="@style/me_common_item_relativeLayout_style">
+            <TextView
+                style="@style/me_common_item_title_textView_style"
+                android:text="分类"/>
+            <ImageView
+                style="@style/me_common_item_arrow_right_imageView_style"/>
+
+        </RelativeLayout>
+        <View
+            style="@style/me_horizontal_view_style"/>
+        <RelativeLayout
+            android:id="@+id/rl_pay"
+            style="@style/me_common_item_relativeLayout_style">
+            <TextView
+                style="@style/me_common_item_title_textView_style"
+                android:text="转卖方式"/>
+            <ImageView
+                style="@style/me_common_item_arrow_right_imageView_style"/>
+        </RelativeLayout>
+        <View
+            style="@style/me_horizontal_view_style"/>
+
+    </LinearLayout>
+
+</LinearLayout>

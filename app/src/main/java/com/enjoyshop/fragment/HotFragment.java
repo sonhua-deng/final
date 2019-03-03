@@ -72,11 +72,11 @@ public class HotFragment extends BaseFragment {
     }
 
 
-    //跳转到搜索界面
-    @OnClick({R.id.toolbar})
-    public void searchView(View view) {
-        startActivity(new Intent(getContext(), SearchActivity.class));
-    }
+//    //跳转到搜索界面
+//    @OnClick({R.id.toolbar})
+//    public void searchView(View view) {
+//        startActivity(new Intent(getContext(), SearchActivity.class));
+//    }
 
 
     private void initRefreshLayout() {
