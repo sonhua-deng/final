@@ -1,28 +1,143 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:clipToPadding="true"
-              android:fitsSystemWindows="true"
-              android:orientation="vertical"
-    >
-
-    <com.enjoyshop.widget.EnjoyshopToolBar
-        android:id="@id/toolbar"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:fresco="http://schemas.android.com/tools"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true">
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
-        android:minHeight="?attr/actionBarSize"
-        app:contentInsetEnd="56dp"
-        app:isShowLeftIcon="true"
-        app:isShowSearchView="false"
-        app:title="商品详情"
-        />
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <com.tencent.smtt.sdk.WebView
-        android:id="@id/webView"
+            <com.sevenshop.widget.EnjoyshopToolBar
+                android:id="@id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/colorPrimary"
+                android:minHeight="?attr/actionBarSize"
+                app:contentInsetEnd="56dp"
+                app:isShowLeftIcon="true"
+                app:isShowSearchView="false"
+                app:title="商品详情"
+                />
+
+            <com.youth.banner.Banner xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/banner"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                app:indicator_drawable_selected="@drawable/banner_indicator_selected"
+                app:indicator_drawable_unselected="@drawable/banner_indicator_unselected"
+                app:is_auto_play="true"
+                app:title_height="25dp"
+                app:title_textcolor="@color/white"
+                app:title_textsize="13sp" />
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:paddingLeft="14dp"
+                android:text="距离结束时间剩下: "/>
+            <RelativeLayout
+                android:paddingLeft="14dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/current_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:paddingRight="30dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:text="当前价格: "/>
+
+                <TextView
+                    android:id="@+id/start_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/current_price"
+                    android:layout_toRightOf="@+id/current_price"
+                    android:gravity="start"
+                    android:text="起始价格: " />
+            </RelativeLayout>
+            <TextView
+                android:paddingLeft="14dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_title"
+                android:text="标题"
+                android:textSize="25sp"/>
+            <TextView
+                android:paddingLeft="14dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_desc"
+                android:text="描述"
+                android:textSize="25sp"/>
+
+        </LinearLayout>
+        <RelativeLayout
+            android:paddingLeft="14dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/avatar"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                fresco:roundAsCircle = "true"
+                />
+            <TextView
+                android:id="@+id/tv_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/avatar"
+                android:layout_toRightOf="@+id/avatar"
+                android:text="user"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+    <android.support.constraint.ConstraintLayout
+        android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
+        android:layout_height="wrap_content">
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/tv_collect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:background="@color/colorAccent"
+
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:gravity="center_horizontal"
+            android:text="点击收藏"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toStartOf="@+id/tv_buy"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_buy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:padding="5dp"
+            android:layout_marginRight="8dp"
+            android:gravity="center_horizontal"
+            android:background="@color/colorAccent"
+            android:text="点击购买"
+            android:textSize="30sp"
+            app:layout_constraintStart_toEndOf="@+id/tv_collect"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+</RelativeLayout>

@@ -384,4 +384,21 @@
     <color name="color_green">#43c117</color>
     <color name="colorD5D5D5">#D5D5D5</color>
     <color name="bg_common_gray">#ffe2e2e2</color>
+    <color name="grad">#ff3c3c3c</color>
+    <color name="sharemedia_text_highlight">#576b93</color>
+    <color name="text_color_highlight">#33ce46ec</color>
+    <color name="color_list_divider">#e9e9ea</color>
+    <color name="dialog_blue">#3771EC</color>
+    <color name="dialog_blue_transparent_50">#803771EC</color>
+    <color name="color_hint_text">#999999</color> //时间、地点、输入框提示等次要信息颜色
+    <color name="color_dark_background">#0f141e</color>
+    <color name="color666666">#666666</color>
+    <color name="color929292">#929292</color>
+    <color name="md_btn_selected">#33969696</color>
+    <color name="color_title_text">#25252f</color> //用于导航栏、标题栏、列表用户名、按钮名称等重要信息
+    <color name="colorF0F0F0">#F0F0F0</color>
+    <color name="colorefefef">#efefef</color>
+    <color name="view_bg_press_state">#99f8f8f8</color>
+
+
 </resources>

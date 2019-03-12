@@ -9,7 +9,7 @@
               android:clipToPadding="true"
     >
 
-    <com.enjoyshop.widget.EnjoyshopToolBar
+    <com.sevenshop.widget.EnjoyshopToolBar
         android:id="@id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -28,7 +28,7 @@
         android:padding="@dimen/largePadding"
         >
 
-        <com.enjoyshop.widget.ClearEditText
+        <com.sevenshop.widget.ClearEditText
             android:id="@+id/etxt_phone"
             style="@style/editText_base"
             android:layout_width="match_parent"
@@ -42,7 +42,7 @@
         <View
             style="@style/line_vertical"/>
 
-        <com.enjoyshop.widget.ClearEditText
+        <com.sevenshop.widget.ClearEditText
             android:id="@+id/etxt_pwd"
             style="@style/editText_base"
             android:layout_width="match_parent"
@@ -70,32 +70,30 @@
         android:layout_gravity="bottom"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:padding="@dimen/largePadding"
-        >
+        android:padding="@dimen/largePadding">
 
         <TextView
             android:id="@+id/txt_toReg"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:paddingBottom="6dp"
+            android:paddingTop="6dp"
             android:text="注册账号"
             android:textColor="@color/blue"
-            android:textSize="14sp"
-            android:paddingTop="6dp"
-            android:paddingBottom="6dp"
-            />
+            android:textSize="14sp" />
 
         <TextView
+            android:id="@+id/tv_forgetpw"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="right"
+            android:paddingBottom="6dp"
+            android:paddingTop="6dp"
             android:text="忘记密码"
             android:textColor="@color/blue"
-            android:textSize="14sp"
-            android:paddingTop="6dp"
-            android:paddingBottom="6dp"
-            />
+            android:textSize="14sp" />
     </LinearLayout>
 
 </LinearLayout>

@@ -1,0 +1,57 @@
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="24dp"
+    android:paddingBottom="6dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <include layout="@layout/md_stub_titleframe" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:paddingTop="@dimen/md_content_padding_top"
+        android:paddingBottom="@dimen/md_content_padding_bottom">
+
+        <TextView
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/md_dialog_frame_margin"
+            android:paddingLeft="@dimen/md_dialog_frame_margin"
+            android:paddingEnd="@dimen/md_dialog_frame_margin"
+            android:paddingRight="@dimen/md_dialog_frame_margin"
+            android:textSize="@dimen/md_content_textsize"
+            android:textColor="#999999"
+            tools:text="Content" />
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_toLeftOf="@+id/buttonDefaultPositive"
+            android:layout_toStartOf="@+id/buttonDefaultPositive"
+            android:id="@+id/buttonDefaultNegative"
+            style="@style/MD_ActionButton.Text"
+            android:text="取消" />
+
+        <TextView
+            android:id="@+id/buttonDefaultPositive"
+            style="@style/MD_ActionButton.Text"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:text="确定"
+            android:paddingStart="@dimen/md_dialog_frame_margin"
+            android:paddingLeft="@dimen/md_dialog_frame_margin"
+            android:paddingEnd="@dimen/md_dialog_frame_margin"
+            android:paddingRight="@dimen/md_dialog_frame_margin"
+            />
+    </RelativeLayout>
+
+</LinearLayout>

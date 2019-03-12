@@ -12,7 +12,7 @@
         android:background="?attr/colorPrimary"
         >
 
-        <com.enjoyshop.widget.CircleImageView
+        <com.sevenshop.widget.CircleImageView
             android:id="@+id/img_head"
             android:layout_width="100dp"
             android:layout_height="100dp"
@@ -22,7 +22,7 @@
             app:civ_border_color="#FFFFFF"
             app:civ_border_width="2dp"
             >
-        </com.enjoyshop.widget.CircleImageView>
+        </com.sevenshop.widget.CircleImageView>
 
         <TextView
             android:id="@+id/txt_username"
@@ -42,57 +42,87 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         >
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="5dp"
             android:orientation="vertical"
             >
-
-            <TextView
-                android:id="@+id/txt_my_orders"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/selector_list_item"
-                android:drawableLeft="@drawable/icon_list_o"
-                android:drawablePadding="20dp"
-                android:gravity="center_vertical"
-                android:padding="@dimen/largePadding"
-                android:text="@string/my_orders"
-                android:textColor="@color/black"
-                />
+                android:padding="5dp"
+                android:background="@drawable/white_quai_bg"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/me_user_tv_cart"
+                    style="@style/me_userLayout_textView_style"
+                    android:drawableTop="@mipmap/user_icon_lashouquan"
+                    android:text="发布管理"/>
+                <View
+                    style="@style/me_vertical_view_style"/>
+                <TextView
+                    android:id="@+id/me_user_tv_favorite"
+                    style="@style/me_userLayout_textView_style"
+                    android:drawableTop="@mipmap/user_icon_favorite"
+                    android:text="收藏"/>
+                <View
+                    style="@style/me_vertical_view_style"/>
+                <TextView
+                    android:id="@+id/me_user_tv_history"
+                    style="@style/me_userLayout_textView_style"
+                    android:drawableTop="@mipmap/user_icon_history"
+                    android:text="买入管理"/>
 
-            <View style="@style/line_vertical"/>
+            </LinearLayout>
 
-            <TextView
-                android:id="@+id/txt_my_favorite"
+            <LinearLayout
+                android:id="@+id/me_user_order_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/selector_list_item"
-                android:drawableLeft="@drawable/icon_favorite"
-                android:drawablePadding="20dp"
-                android:gravity="center_vertical"
-                android:padding="@dimen/largePadding"
-                android:text="@string/my_favorite"
-                android:textColor="@color/black"
-                />
+                android:orientation="vertical"
+                android:background="@drawable/white_quai_bg">
+                <RelativeLayout
+                    android:id="@+id/me_item_unpaid_layout"
+                    style="@style/me_common_item_relativeLayout_style">
 
-            <View style="@style/line_vertical"/>
+                    <TextView
+                        style="@style/me_common_item_title_textView_style"
+                        android:text="客服中心"/>
+                    <ImageView
+                        android:id="@+id/me_item_unpaid_iv_arrow_right"
+                        style="@style/me_common_item_arrow_right_imageView_style"/>
+                </RelativeLayout>
+                <View
+                    style="@style/me_horizontal_view_style"/>
+                <RelativeLayout
+                    android:id="@+id/me_item_paid_order_layout"
+                    style="@style/me_common_item_relativeLayout_style">
 
-            <TextView
-                android:id="@+id/txt_my_address"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/selector_list_item"
-                android:drawableLeft="@drawable/icon_location"
-                android:drawablePadding="20dp"
-                android:gravity="center_vertical"
-                android:padding="@dimen/largePadding"
-                android:text="@string/my_addresses"
-                android:textColor="@color/black"
-                />
+                    <TextView
+                        style="@style/me_common_item_title_textView_style"
+                        android:text="意见反馈"/>
+                    <ImageView
+                        android:id="@+id/me_item_paid_iv_arrow_right"
+                        style="@style/me_common_item_arrow_right_imageView_style"/>
 
+
+                </RelativeLayout>
+                <View
+                    style="@style/me_horizontal_view_style"/>
+                <RelativeLayout
+                    android:id="@+id/me_item_lottery_layout"
+                    style="@style/me_common_item_relativeLayout_style">
+                    <TextView
+                        style="@style/me_common_item_title_textView_style"
+                        android:text="平台规则"/>
+                    <ImageView
+                        android:id="@+id/me_item_lottery_iv_arrow_right"
+                        style="@style/me_common_item_arrow_right_imageView_style"/>
+                </RelativeLayout>
+                <View
+                    style="@style/me_horizontal_view_style"/>
+            </LinearLayout>
             <Button
                 android:id="@+id/btn_logout"
                 style="@style/bigConfirmButton"

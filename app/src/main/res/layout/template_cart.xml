@@ -1,72 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
-              android:layout_width="match_parent"
-              android:layout_height="120dp"
-              android:background="@drawable/selector_list_item"
-              android:gravity="center_vertical"
-              android:orientation="horizontal"
-              android:padding="5dp"
-              android:id="@+id/ll_item"
-    >
-
-    <CheckBox
-        android:id="@+id/checkbox"
-        style="@style/customCheckbox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="false"
-        android:focusable="false"
-        />
-
-    <LinearLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:fresco="http://schemas.android.com/tools"
+    android:background="@drawable/selector_list_item"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:id="@+id/ll_item">
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/iv_view"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+    <TextView
+        android:id="@+id/text_title"
+        android:paddingLeft="14dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:orientation="horizontal"
-        >
+        android:paddingRight="14dp"
+        android:text="16saaaaaaaaaaaaaaaaaaaaaap"
+        android:textSize="16sp"
+        />
 
-        <ImageView
-            android:id="@+id/iv_view"
-            android:layout_width="0dp"
-            android:layout_weight="3"
-            android:layout_height="120dp"
-            android:scaleType="fitXY"
+    <TextView
+        android:id="@+id/tv_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="124244244322353235"
+        android:paddingLeft="14dp"
+        android:textSize="20sp"
+        android:textColor="@color/colorAccent"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:paddingLeft="14dp"
+        android:paddingRight="14dp"
+        android:background="@color/gray"></View>
+    <RelativeLayout
+        android:paddingLeft="14dp"
+        android:paddingRight="14dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/avatar"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            fresco:roundAsCircle = "true"
             />
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_weight="5"
+        <TextView
+            android:id="@+id/tv_user"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:orientation="vertical"
-            >
+            android:layout_alignParentTop="true"
+            android:paddingLeft="30dp"
+            android:layout_toEndOf="@+id/avatar"
+            android:layout_toRightOf="@+id/avatar"
+            android:text="user"/>
 
-            <TextView
-                android:id="@+id/text_title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:maxLines="2"
-                android:textColor="@color/gray"
-                android:textSize="@dimen/base_text_size"
-                />
+    </RelativeLayout>
 
-            <TextView
-                android:id="@+id/text_price"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:textColor="@color/crimson"
-                android:textSize="18sp"
-                />
-
-            <com.enjoyshop.widget.NumberAddSubView
-                android:id="@+id/num_control"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                app:minValue="1"
-                />
-        </LinearLayout>
-    </LinearLayout>
 </LinearLayout>

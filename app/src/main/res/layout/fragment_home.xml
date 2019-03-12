@@ -15,7 +15,7 @@
             android:orientation="vertical"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
-            <com.enjoyshop.widget.EnjoyshopToolBar
+            <com.sevenshop.widget.EnjoyshopToolBar
                 android:id="@id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -37,8 +37,9 @@
 
             <GridView
                 android:id="@+id/home_gridView"
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="150dp"
                 android:numColumns="5" />
         </LinearLayout>
 
@@ -48,6 +49,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:layout_marginTop="15dp"
         app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior">
 
         <com.library.tabstrip.PagerSlidingTabStrip
@@ -60,7 +62,7 @@
             app:pstsDividerColor="@android:color/transparent"
             app:pstsIndicatorColor="@color/colorAccent"
             app:pstsIndicatorHeight="2dp"
-            app:pstsShouldExpand="false"
+            app:pstsShouldExpand="true"
             app:pstsTabPaddingLeftRight="20dp"
             app:pstsTextAllCaps="false"
             app:pstsUnderlineColor="#e9e9ea"

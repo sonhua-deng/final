@@ -1,0 +1,95 @@
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="6dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <include layout="@layout/md_stub_titleframe" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:paddingTop="@dimen/md_content_padding_top"
+        android:paddingBottom="@dimen/md_content_padding_bottom">
+
+        <TextView
+            android:paddingTop="@dimen/md_content_padding_top"
+            android:paddingBottom="@dimen/md_content_padding_bottom"
+            android:layout_marginStart="@dimen/md_dialog_frame_margin"
+            android:layout_marginLeft="@dimen/md_dialog_frame_margin"
+            android:layout_marginEnd="@dimen/md_dialog_frame_margin"
+            android:layout_marginRight="@dimen/md_dialog_frame_margin"
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:textColor="#999999"
+            android:textSize="@dimen/md_content_textsize"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="@dimen/md_content_padding_bottom"
+            tools:text="Message"
+            android:layout_gravity="center_horizontal"
+            tools:ignore="UnusedAttribute" />
+
+        <EditText
+            style="@style/MD_Edit"
+            android:id="@+id/input"
+            android:layout_marginStart="@dimen/md_dialog_frame_margin"
+            android:layout_marginLeft="@dimen/md_dialog_frame_margin"
+            android:layout_marginEnd="@dimen/md_dialog_frame_margin"
+            android:layout_marginRight="@dimen/md_dialog_frame_margin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/md_content_textsize"
+            tools:ignore="TextFields"
+            android:layout_marginBottom="1dp" />
+
+        <TextView
+            android:layout_marginStart="@dimen/md_dialog_frame_margin"
+            android:layout_marginLeft="@dimen/md_dialog_frame_margin"
+            android:layout_marginEnd="@dimen/md_dialog_frame_margin"
+            android:layout_marginRight="@dimen/md_dialog_frame_margin"
+            android:id="@+id/minMax"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="48dp"
+            tools:text="50/100"
+            android:layout_gravity="end"
+            android:textSize="12sp"
+            android:gravity="end"
+            android:textAlignment="viewEnd"
+            android:paddingRight="4dp"
+            android:paddingEnd="4dp"
+            android:fontFamily="sans-serif"
+            tools:ignore="RtlSymmetry,UnusedAttribute" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_toLeftOf="@+id/buttonDefaultPositive"
+            android:layout_toStartOf="@+id/buttonDefaultPositive"
+            android:id="@+id/buttonDefaultNegative"
+            style="@style/MD_ActionButton.Text"
+            android:text="取消" />
+
+        <TextView
+            android:id="@+id/buttonDefaultPositive"
+            android:paddingStart="@dimen/md_dialog_frame_margin"
+            android:paddingLeft="@dimen/md_dialog_frame_margin"
+            android:paddingEnd="@dimen/md_dialog_frame_margin"
+            android:paddingRight="@dimen/md_dialog_frame_margin"
+            style="@style/MD_ActionButton.Text"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:text="确定" />
+    </RelativeLayout>
+
+</LinearLayout>

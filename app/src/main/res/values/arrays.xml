@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <array name="home_bar_labels">
+    <string-array name="home_bar_labels">
         <item>手机</item>
         <item>电脑</item>
         <item>数码</item>
@@ -11,7 +11,16 @@
         <item>美妆</item>
         <item>珠宝</item>
         <item>其他分类</item>
-    </array>
+    </string-array>
+    <string-array name="gender">
+        <item>"男"</item>
+        <item>"女"</item>
+    </string-array>
+
+    <string-array name="shell_type">
+        <item>平台出售</item>
+        <item>个人出售</item>
+    </string-array>
 
     <array name="home_bar_icon">
         <item>@mipmap/icon_home_food_99</item>

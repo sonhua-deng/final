@@ -9,7 +9,7 @@
               android:orientation="vertical"
     >
 
-    <com.enjoyshop.widget.EnjoyshopToolBar
+    <com.sevenshop.widget.EnjoyshopToolBar
         android:id="@id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -81,7 +81,7 @@
             <View
                 style="@style/line_horizontal"/>
 
-            <com.enjoyshop.widget.ClearEditText
+            <com.sevenshop.widget.ClearEditText
                 android:id="@+id/edittxt_phone"
                 style="@style/editText_base"
                 android:layout_width="0dp"
@@ -115,7 +115,7 @@
             <View
                 style="@style/line_horizontal"/>
 
-            <com.enjoyshop.widget.ClearEditText
+            <com.sevenshop.widget.ClearEditText
                 android:id="@+id/edittxt_pwd"
                 style="@style/editText_base"
                 android:layout_width="0dp"
@@ -134,7 +134,7 @@
         android:layout_marginTop="20dp"
         android:gravity="center"
         android:paddingLeft="@dimen/largePadding"
-        android:text="点击‘继续’ 按钮，表示你同意《轻松购用户协议》"
+        android:text="点击‘继续’ 按钮，表示你同意《第七当铺用户协议》"
         android:textColor="@color/border_color"
         android:textSize="12sp"
         />

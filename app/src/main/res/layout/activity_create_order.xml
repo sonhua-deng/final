@@ -7,7 +7,7 @@
                 android:clipToPadding="true"
     >
 
-    <com.enjoyshop.widget.EnjoyshopToolBar
+    <com.sevenshop.widget.EnjoyshopToolBar
         android:id="@id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,7 +17,7 @@
         app:isShowLeftIcon="true"
         app:title="@string/create_order"
         >
-    </com.enjoyshop.widget.EnjoyshopToolBar>
+    </com.sevenshop.widget.EnjoyshopToolBar>
 
     <ScrollView
         android:layout_width="match_parent"

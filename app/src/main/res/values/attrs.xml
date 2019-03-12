@@ -7,7 +7,14 @@
         <attr name="isShowLeftIcon" format="boolean"/>
         <attr name="rightButtonText" format="string"/>
     </declare-styleable>
-
+    <declare-styleable name="SimpleSettingItem">
+        <attr name="editable"/>
+        <attr name="leftText"/>
+        <attr name="rightText"/>
+        <attr name="rightHint" format="string"/>
+        <attr name="leftTextColor" format="color"/>
+        <attr name="rightTextColor" format="color"/>
+    </declare-styleable>
     <!--圆角头像-->
     <declare-styleable name="CircleImageView">
         <attr name="civ_border_width" format="dimension" />

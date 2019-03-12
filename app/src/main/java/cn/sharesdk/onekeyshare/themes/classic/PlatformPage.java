@@ -19,7 +19,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.enjoyshop.R;
+import com.sevenshop.R;
 import com.mob.tools.gui.MobViewPager;
 import com.mob.tools.utils.ResHelper;
 

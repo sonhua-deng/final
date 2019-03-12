@@ -1,0 +1,55 @@
+<resources>
+    <style name="EditTextStyle.Alignment" parent="@android:style/Widget.EditText">
+        <item name="android:textDirection">locale</item>
+        <item name="android:textAlignment">gravity</item>
+    </style>
+
+    <style name="TextViewStyle.Alignment" parent="@android:style/Widget.TextView">
+        <item name="android:textDirection">locale</item>
+        <item name="android:textAlignment">gravity</item>
+    </style>
+    <style name="MD_Dialog_Light" parent="@android:style/Theme.DeviceDefault.Light.Dialog">
+        <item name="android:windowMinWidthMajor">@dimen/abc_dialog_min_width_major</item>
+        <item name="android:windowMinWidthMinor">@dimen/abc_dialog_min_width_minor</item>
+        <item name="android:colorControlActivated">@color/colorAccent</item>
+        <item name="android:textColorHighlight">@color/colorAccent_transparent_50</item>
+        <item name="android:editTextStyle">@style/EditTextStyle.Alignment</item>
+        <item name="android:textViewStyle">@style/TextViewStyle.Alignment</item>
+    </style>
+    <style name="MD_Edit">
+        <item name="android:colorControlActivated">@color/colorAccent</item>
+        <item name="android:textColorHighlight">@color/colorAccent_transparent_50</item>
+        <item name="android:textCursorDrawable">@drawable/cursor_drawable</item>
+    </style>
+    <style name="edit_text_box" parent="MD_Edit">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">55dp</item>
+        <item name="android:background">#FFFFFF</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColorHint">#FFD1D1D1</item>
+    </style>
+
+
+
+    <style name="MD_ActionButtonBg">
+        <item name="android:background">@drawable/select_item_bg_borderless</item>
+    </style>
+
+    <style name="MD_ActionButton.Text">
+        <item name="android:textSize">@dimen/md_button_textsize</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:gravity">center</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:background">@drawable/select_item_bg_borderless</item>
+        <item name="android:minWidth">@dimen/md_button_min_width</item>
+        <item name="android:paddingLeft">6dp</item>
+        <item name="android:paddingRight">6dp</item>
+        <item name="android:textColor">@color/material_dialog_action_btn_text_color</item>
+        <item name="android:minHeight">48dp</item>
+    </style>
+
+
+
+</resources>

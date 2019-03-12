@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/select_item_bg"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:padding="15dp">
+
+    <TextView
+        android:id="@+id/tx_setting_item_left"
+        style="@style/item_left"
+        android:layout_marginEnd="@dimen/setting_margin"
+        android:layout_marginRight="@dimen/setting_margin"
+        tools:text="title"
+        />
+
+    <Space
+        android:id="@+id/space"
+        android:layout_width="1dp"
+        android:layout_height="wrap_content"
+     />
+
+
+
+    <TextView
+        android:id="@+id/tx_setting_item_right"
+        style="@style/bigo_live_item_right_arrow_gray"
+        android:gravity="right|center_vertical|end"
+        android:textColorHint="#bcbcbc"
+        tools:text="subtitle"
+        />
+</LinearLayout>
