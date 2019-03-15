@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/price1"
+        android:title="综合排序"/>
+    <item android:id="@+id/price2"
+        android:title="价格降序"/>
+    <item android:id="@+id/price3"
+        android:title="价格升序"/>
+
+</menu>

@@ -220,9 +220,7 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
         MDDialog.newBuilder()
                 .input()
                 .content("输入个人售卖的价格")
-                .inputType(InputType.TYPE_CLASS_TEXT |
-                        InputType.TYPE_TEXT_VARIATION_PERSON_NAME |
-                        InputType.TYPE_TEXT_FLAG_CAP_WORDS)
+                .inputType(InputType.TYPE_CLASS_NUMBER )
                 .inputRangeRes(1, 16, getResources().getColor(android.R.color.holo_red_light))
                 .cancelOutside(false)
                 .hasNegative(false)    // 是否显示取消

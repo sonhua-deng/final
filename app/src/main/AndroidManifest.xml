@@ -79,9 +79,6 @@
             android:name=".activity.CreateOrderActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.GoodsListActivity"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".activity.MyFavoriteActivity"
             android:screenOrientation="portrait" />
         <activity
@@ -92,6 +89,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".activity.SearchResultActivity"
+            android:theme="@style/searchTheme"
             android:launchMode="singleTask" />
         <activity
             android:name=".activity.RegActivity"
@@ -172,7 +170,9 @@
             android:authorities="com.sevenshop.BmobContentProvider" />
 
         <activity android:name=".activity.ForgetActivity" />
-        <activity android:name=".activity.ProfileSettingActivity"></activity>
+        <activity android:name=".activity.ProfileSettingActivity" />
+        <activity android:name=".activity.MoneyActivity" />
+        <activity android:name=".activity.ManagerActivity"></activity>
     </application>
 
 </manifest>

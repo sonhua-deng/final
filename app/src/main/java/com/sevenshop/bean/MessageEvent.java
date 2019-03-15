@@ -12,6 +12,16 @@ public class MessageEvent {
 
     private int type = 0;
 
+    private int money;
+
+    public int getMoney() {
+        return money;
+    }
+
+    public void setMoney(int money) {
+        this.money = money;
+    }
+
     public int getType() {
         return type;
     }

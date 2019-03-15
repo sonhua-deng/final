@@ -158,9 +158,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     @Override
     public void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
+        mTabhost.setCurrentTab(0);           //默认选中第0个
         if (intent.getBooleanExtra("islogin",false)) {
             MineFragment mineFragment = (MineFragment) getSupportFragmentManager().findFragmentByTag(getResources().getString(R.string.mine));
             mineFragment.update();
         }
     }
+
 }

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/type1"
+        android:title="全部"/>
+    <item android:id="@+id/type2"
+        android:title="手机"/>
+    <item android:id="@+id/type3"
+        android:title="电脑"/>
+    <item android:id="@+id/type4"
+        android:title="数码"/>
+    <item android:id="@+id/type5"
+        android:title="游戏交易"/>
+    <item android:id="@+id/type6"
+        android:title="服装鞋帽"/>
+    <item android:id="@+id/type7"
+        android:title="二手车"/>
+    <item android:id="@+id/type8"
+        android:title="家电"/>
+    <item android:id="@+id/type9"
+        android:title="美妆"/>
+    <item android:id="@+id/type10"
+        android:title="珠宝"/>
+</menu>

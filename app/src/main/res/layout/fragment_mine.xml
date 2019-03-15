@@ -122,6 +122,26 @@
                 </RelativeLayout>
                 <View
                     style="@style/me_horizontal_view_style"/>
+                <RelativeLayout
+                    android:id="@+id/me_item_money"
+                    style="@style/me_common_item_relativeLayout_style">
+                    <TextView
+                        style="@style/me_common_item_title_textView_style"
+                        android:text="钱包"/>
+
+                    <TextView
+                        android:id="@+id/tv_money"
+                        style="@style/me_common_item_title_textView_style"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
+                        android:paddingRight="30dp"
+                        android:text="钱包"/>
+
+                    <ImageView
+                        style="@style/me_common_item_arrow_right_imageView_style"/>
+                </RelativeLayout>
+                <View
+                    style="@style/me_horizontal_view_style"/>
             </LinearLayout>
             <Button
                 android:id="@+id/btn_logout"

@@ -20,8 +20,24 @@ public class Goods extends BmobObject {
     String shellType;
     User pulisher;
     User buyer;
+
+    public boolean isShell() {
+        return isShell;
+    }
+
     boolean isShell;
 
+    @Override
+    public String toString() {
+        String result=title+des+type+shellType;
+        if (pulisher!=null &&pulisher.getNickName()!=null) {
+            result+=pulisher.getNickName();
+        }
+        if (buyer!=null &&buyer.getNickName()!=null) {
+            result+=buyer.getNickName();
+        }
+        return result;
+    }
     public String getDes() {
         return des;
     }
@@ -97,5 +113,6 @@ public class Goods extends BmobObject {
     public void setType(String type) {
         this.type = type;
     }
+
 
 }

@@ -3,6 +3,7 @@ package com.sevenshop.fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.TypedArray;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -16,6 +17,7 @@ import com.bumptech.glide.Glide;
 import com.sevenshop.SevenShopApplication;
 import com.sevenshop.R;
 import com.sevenshop.activity.SearchActivity;
+import com.sevenshop.activity.SearchResultActivity;
 import com.sevenshop.adapter.GridAdapter;
 import com.sevenshop.adapter.HomeCatgoryAdapter;
 import com.sevenshop.bean.BannerBean;
@@ -107,7 +109,11 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
         gridView1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
+                Bundle bundle = new Bundle();
+                bundle.putString("search", getResources().getStringArray(R.array.home_bar_labels)[i]);
+                Intent intent = new Intent(mContext, SearchResultActivity.class);
+                intent.putExtras(bundle);
+                startActivity(intent);
             }
         });
         FragmentManager fragmentManager = getChildFragmentManager();
@@ -153,7 +159,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
         //设置每一页对应的fragment
         @Override
         public Fragment getItem(int position) {
-            return new HotFragment();
+            return HotFragment.newInstance(mContext,position,HotFragment.MAIN_TAB);
         }
         //fragment的数量
         @Override

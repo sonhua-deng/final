@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:fresco="http://schemas.android.com/tools"
     android:background="@drawable/selector_list_item"
     android:gravity="center_vertical"
     android:orientation="vertical"
@@ -11,13 +10,14 @@
     <com.facebook.drawee.view.SimpleDraweeView
         android:id="@+id/iv_view"
         android:layout_width="match_parent"
-        android:layout_height="40dp" />
+        android:layout_height="250dp" />
+
     <TextView
         android:id="@+id/text_title"
-        android:paddingLeft="14dp"
+        android:paddingLeft="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingRight="14dp"
+        android:paddingRight="5dp"
         android:text="16saaaaaaaaaaaaaaaaaaaaaap"
         android:textSize="16sp"
         />
@@ -27,26 +27,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="124244244322353235"
-        android:paddingLeft="14dp"
-        android:textSize="20sp"
+        android:paddingLeft="5dp"
+        android:textSize="18sp"
         android:textColor="@color/colorAccent"
         />
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:paddingLeft="14dp"
-        android:paddingRight="14dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
         android:background="@color/gray"></View>
     <RelativeLayout
-        android:paddingLeft="14dp"
-        android:paddingRight="14dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <com.facebook.drawee.view.SimpleDraweeView
             android:id="@+id/avatar"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             fresco:roundAsCircle = "true"
+            fresco:placeholderImage = "@drawable/default_head"
             />
         <TextView
             android:id="@+id/tv_user"
@@ -54,9 +56,10 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:paddingLeft="30dp"
+            android:gravity="center_vertical|center_horizontal"
             android:layout_toEndOf="@+id/avatar"
             android:layout_toRightOf="@+id/avatar"
-            android:text="user"/>
+            android:text="佚名"/>
 
     </RelativeLayout>
 

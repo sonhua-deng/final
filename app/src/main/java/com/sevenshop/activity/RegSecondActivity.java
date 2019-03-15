@@ -1,6 +1,7 @@
 package com.sevenshop.activity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.support.design.widget.Snackbar;
 import android.text.TextUtils;
 import android.util.Log;
@@ -9,6 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.sevenshop.R;
+import com.sevenshop.bean.Money;
 import com.sevenshop.bean.User;
 import com.sevenshop.utils.CountTimerView;
 import com.sevenshop.utils.ListUtils;
@@ -165,6 +167,18 @@ public class RegSecondActivity extends BaseActivity {
             @Override
             public void done(User user, BmobException e) {
                 if (e == null) {
+
+                    Money category = new Money();
+                    category.setMoney(0);
+                    category.setUser(user);
+                    category.save(new SaveListener<String>() {
+                        @Override
+                        public void done(String objectId, BmobException e) {
+                            if (e == null) {
+                            } else {
+                            }
+                        }
+                    });
                     final User u = new User();
                     //此处替换为你的用户名
                     u.setUsername(phone);

@@ -22,7 +22,7 @@ public class SplashActivity extends BaseActivity implements View.OnClickListener
 
     @BindView(R.id.tv_time)
     TextView mTvTime;
-    private int duration = 3;      //倒计时3秒
+    private int duration = 0;      //倒计时3秒
     Timer timer = new Timer();
 
     @Override
@@ -65,12 +65,12 @@ public class SplashActivity extends BaseActivity implements View.OnClickListener
         boolean isFirst = PreferencesUtils.getBoolean(SplashActivity.this, "isFirst", true);
         //默认为第一次
 
-        if (isFirst) {
-            PreferencesUtils.putBoolean(SplashActivity.this, "isFirst", false);
-            startActivity(new Intent(SplashActivity.this, GuideActivity.class));
-        } else {
+//        if (isFirst) {
+//            PreferencesUtils.putBoolean(SplashActivity.this, "isFirst", false);
+//            startActivity(new Intent(SplashActivity.this, GuideActivity.class));
+//        } else {
             startActivity(new Intent(SplashActivity.this, MainActivity.class));
-        }
+//        }
 
         finish();
     }

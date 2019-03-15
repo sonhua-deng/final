@@ -22,6 +22,7 @@ import android.widget.Toast;
 import com.sevenshop.R;
 import com.sevenshop.bean.User;
 import com.sevenshop.utils.GlideUtils;
+import com.sevenshop.utils.StringUtils;
 import com.sevenshop.widget.CircleImageView;
 import com.sevenshop.widget.EnjoyshopToolBar;
 import com.sevenshop.widget.MDDialog;
@@ -374,22 +375,22 @@ public class ProfileSettingActivity extends BaseActivity {
     }
 
     private void showUI() {
-        if (user.getSignature().isEmpty()) {
+        if (StringUtils.isEmpty(user.getSignature())) {
             mRlSignature.getRightTextView().setHint("输入用户签名");
         } else {
             mRlSignature.getRightTextView().setText(user.getSignature());
         }
-        if (user.getHometown().isEmpty()) {
+        if (StringUtils.isEmpty(user.getHometown())) {
             mRlHomeTown.getRightTextView().setHint("输入用户地址");
         } else {
             mRlHomeTown.getRightTextView().setText(user.getHometown());
         }
-        if (user.getSexy().isEmpty()) {
+        if (StringUtils.isEmpty(user.getSexy())) {
             mRlSexy.getRightTextView().setHint("输入用户性别");
         } else {
             mRlSexy.getRightTextView().setText(user.getSexy());
         }
-        if (user.getNickName().isEmpty()) {
+        if (StringUtils.isEmpty(user.getNickName())) {
             mRlNickName.getRightTextView().setHint("输入用户昵称");
         } else {
             mRlNickName.getRightTextView().setText(user.getNickName());
@@ -560,6 +561,7 @@ public class ProfileSettingActivity extends BaseActivity {
                     public void done(BmobUser user, BmobException e) {
                     }
                 });
+                setResult(1);
                 ProfileSettingActivity
                         .this.finish();
             }

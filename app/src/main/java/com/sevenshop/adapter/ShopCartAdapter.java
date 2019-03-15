@@ -109,7 +109,7 @@ public class ShopCartAdapter extends RecyclerView.Adapter<ShopCartAdapter.ViewHo
             mIvLogo = itemView.findViewById(R.id.iv_view);
             mTvTitle = itemView.findViewById(R.id.text_title);
             mTvPrice = itemView.findViewById(R.id.text_price);
-            mNumberAddSubView = itemView.findViewById(R.id.num_control);
+//            mNumberAddSubView = itemView.findViewById(R.id.num_control);
         }
     }
 

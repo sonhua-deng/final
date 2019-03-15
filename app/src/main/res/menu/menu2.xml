@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/shelltype1"
+        android:title="全部"/>
+    <item android:id="@+id/shelltype2"
+        android:title="平台销售"/>
+    <item android:id="@+id/shelltype3"
+        android:title="个人销售"/>
+
+</menu>

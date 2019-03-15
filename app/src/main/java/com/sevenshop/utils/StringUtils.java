@@ -41,5 +41,13 @@ public class StringUtils {
             return true;
         }
     }
+    public static boolean isEmpty(String pwd) {
+        if (pwd == null || pwd.isEmpty()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 
 }

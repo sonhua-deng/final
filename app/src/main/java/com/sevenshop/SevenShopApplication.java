@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Vibrator;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
 import com.sevenshop.bean.User;
 import com.sevenshop.data.dao.DaoMaster;
 import com.sevenshop.data.dao.DaoSession;
@@ -59,7 +60,7 @@ public class SevenShopApplication extends MobApplication {
         sContext = getApplicationContext();
         initUser();
         Utils.init(this);
-
+        Fresco.initialize(this);
         locationService = new LocationService(getApplicationContext());
         mVibrator = (Vibrator) getApplicationContext().getSystemService(Service.VIBRATOR_SERVICE);
 

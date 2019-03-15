@@ -16,6 +16,7 @@ import com.sevenshop.bean.Goods;
 import com.sevenshop.bean.HotGoods;
 import com.sevenshop.utils.CartShopProvider;
 import com.sevenshop.utils.GlideUtils;
+import com.sevenshop.utils.ListUtils;
 import com.sevenshop.utils.ToastUtils;
 
 import java.util.List;
@@ -42,7 +43,7 @@ public class HotGoodsAdapter extends RecyclerView.Adapter<HotGoodsAdapter.ViewHo
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         mInflater = LayoutInflater.from(parent.getContext());
-        View view = mInflater.inflate(R.layout.template_hot_wares, parent, false);
+        View view = mInflater.inflate(R.layout.template_cart, parent, false);
         view.setOnClickListener(this);
         return new ViewHolder(view);
     }
@@ -53,9 +54,16 @@ public class HotGoodsAdapter extends RecyclerView.Adapter<HotGoodsAdapter.ViewHo
         holder.textTitle.setText(data.getTitle());
         holder.textPrice.setText("￥" + data.getCurrenPrice());
         holder.itemView.setTag(position);
-        holder.ivView.setImageURI(data.getPhotoUrls().get(0));
-        holder.textUser.setText(data.getPulisher().getNickName());
-        holder.ivAvatar.setImageURI(data.getPulisher().getLogo_url());
+        if (!ListUtils.isEmpty(data.getPhotoUrls()) && data.getPhotoUrls().get(0)!=null) {
+            holder.ivView.setImageURI(data.getPhotoUrls().get(0));
+        }
+
+        if (data.getPulisher().getNickName() != null && !data.getPulisher().getNickName().isEmpty()) {
+            holder.textUser.setText(data.getPulisher().getNickName());
+        }
+        if (data.getPulisher().getLogo_url()!=null && !data.getPulisher().getLogo_url().isEmpty()) {
+            holder.ivAvatar.setImageURI(data.getPulisher().getLogo_url());
+        }
     }
 
 
@@ -74,6 +82,11 @@ public class HotGoodsAdapter extends RecyclerView.Adapter<HotGoodsAdapter.ViewHo
 
     public void addData(List<Goods> datas) {
         addData(0, datas);
+    }
+
+    public void addSearchData(List<Goods> datas) {
+        mDatas.addAll(datas);
+        notifyDataSetChanged();
     }
 
     public void addData(int position, List<Goods> datas) {

@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+
+    <color name="around_list_title_color">#39ac69</color>
+    <color name="around_list_divider_color">#f0f0f0</color>
+    <color name="around_supplier_title_color">#5a5959</color>
+    <color name="popwin_bg_color">#5000</color>
+    <color name="around_view_bg_color">#e2e2e2</color>
+    <color name="around_supplier_title_selected_color">#39ac69</color>
+    <color name="detail_merchant_info_color">#ff3c3c3c</color>
+
     <color name="colorAccent">#FFFF3C6B</color>
     <color name="colorAccent_transparent_50">#80FF3C6B</color>
     <color name="white">#ffffff</color>
