@@ -72,7 +72,7 @@
                     android:id="@+id/me_user_tv_history"
                     style="@style/me_userLayout_textView_style"
                     android:drawableTop="@mipmap/user_icon_history"
-                    android:text="买入管理"/>
+                    android:text="订单管理"/>
 
             </LinearLayout>
 
