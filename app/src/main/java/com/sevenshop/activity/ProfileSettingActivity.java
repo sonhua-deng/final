@@ -15,9 +15,6 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.sevenshop.R;
 import com.sevenshop.bean.User;
@@ -161,7 +158,7 @@ public class ProfileSettingActivity extends BaseActivity {
 ////							genderInfo = UserInfoStruct.GENDER_UNKNOWN;
 ////							mRlSexyView.getRightTextView().setText(getResources().getStringArray(R.array.gender)[2]);
 ////						}
-                        if (!TextUtils.equals(genderInfo, user.getSexy())) {
+                        if (!TextUtils.equals(genderInfo, user.getGender())) {
                             mSexy = genderInfo;
                             isSexyChange = true;
                         }
@@ -385,10 +382,10 @@ public class ProfileSettingActivity extends BaseActivity {
         } else {
             mRlHomeTown.getRightTextView().setText(user.getHometown());
         }
-        if (StringUtils.isEmpty(user.getSexy())) {
+        if (StringUtils.isEmpty(user.getGender())) {
             mRlSexy.getRightTextView().setHint("输入用户性别");
         } else {
-            mRlSexy.getRightTextView().setText(user.getSexy());
+            mRlSexy.getRightTextView().setText(user.getGender());
         }
         if (StringUtils.isEmpty(user.getNickName())) {
             mRlNickName.getRightTextView().setHint("输入用户昵称");
@@ -548,7 +545,7 @@ public class ProfileSettingActivity extends BaseActivity {
             user.setSignature(mSignature);
         }
         if (isSexyChange) {
-            user.setSexy(mSexy);
+            user.setGender(mSexy);
         }
         if (isHeadChange) {
             user.setLogo_url(mHeadUri);

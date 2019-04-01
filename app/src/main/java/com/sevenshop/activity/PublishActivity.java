@@ -2,10 +2,7 @@ package com.sevenshop.activity;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.os.Environment;
 import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.InputType;
@@ -29,7 +26,6 @@ import com.sevenshop.utils.ToastUtils;
 import com.sevenshop.widget.EnjoyshopToolBar;
 import com.sevenshop.widget.MDDialog;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -300,7 +296,7 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
                   goods.setCurrenPrice(price);
                   goods.setPhotoUrls(picUrls);
                   goods.setTitle(title.getText().toString());
-                  goods.setShellType(shell_type);
+                  goods.setPublishType(shell_type);
                   goods.setType(choose);
                   goods.setDes(des.getText().toString());
                   goods.save(new SaveListener<String>() {

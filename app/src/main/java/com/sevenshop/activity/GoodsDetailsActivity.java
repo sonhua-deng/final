@@ -2,19 +2,14 @@ package com.sevenshop.activity;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.text.InputType;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
-import android.webkit.JavascriptInterface;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -23,31 +18,21 @@ import com.facebook.drawee.view.SimpleDraweeView;
 import com.sevenshop.SevenShopApplication;
 import com.sevenshop.R;
 import com.sevenshop.adapter.DetailPhotosAdapter;
-import com.sevenshop.adapter.HotGoodsAdapter;
 import com.sevenshop.bean.Collect;
 import com.sevenshop.bean.Goods;
-import com.sevenshop.bean.HotGoods;
 import com.sevenshop.bean.MessageEvent;
 import com.sevenshop.bean.Money;
 import com.sevenshop.bean.User;
-import com.sevenshop.contants.HttpContants;
-import com.sevenshop.fragment.HomeFragment;
-import com.sevenshop.helper.SharePresenter;
-import com.sevenshop.utils.CartShopProvider;
 import com.sevenshop.utils.ListUtils;
-import com.sevenshop.utils.LogUtil;
 import com.sevenshop.utils.ToastUtils;
 import com.sevenshop.widget.EnjoyshopToolBar;
 import com.sevenshop.widget.MDDialog;
-import com.youth.banner.Banner;
-import com.youth.banner.BannerConfig;
 import com.youth.banner.loader.ImageLoader;
 
 import org.greenrobot.eventbus.EventBus;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -137,7 +122,7 @@ public class GoodsDetailsActivity extends BaseActivity implements View.OnClickLi
 
 
     private void showUI() {
-        if(mGoods.getShellType().equals("平台出售")) {
+        if(mGoods.getPublishType().equals("平台出售")) {
             startH();
             changeTime();
             mTvBuy.setText("点击拍卖");
@@ -203,7 +188,7 @@ public class GoodsDetailsActivity extends BaseActivity implements View.OnClickLi
                 }
                 break;
             case R.id.tv_buy:
-                if(mGoods.getShellType().equals("平台出售")) {
+                if(mGoods.getPublishType().equals("平台出售")) {
                     showUpdateNickNameDialog();
                 } else {
                     buy();

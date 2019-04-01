@@ -1,7 +1,5 @@
 package com.sevenshop.bean;
 
-import org.json.JSONObject;
-
 import java.util.List;
 
 import cn.bmob.v3.BmobObject;
@@ -17,7 +15,7 @@ public class Goods extends BmobObject {
     int startPrice;
     int currenPrice;
     String type;
-    String shellType;
+    String publishType;
     User pulisher;
     User buyer;
 
@@ -29,7 +27,7 @@ public class Goods extends BmobObject {
 
     @Override
     public String toString() {
-        String result=title+des+type+shellType;
+        String result=title+des+type+ publishType;
         if (pulisher!=null &&pulisher.getNickName()!=null) {
             result+=pulisher.getNickName();
         }
@@ -62,8 +60,8 @@ public class Goods extends BmobObject {
         return photoUrls;
     }
 
-    public String getShellType() {
-        return shellType;
+    public String getPublishType() {
+        return publishType;
     }
 
     public String getType() {
@@ -102,8 +100,8 @@ public class Goods extends BmobObject {
         isShell = shell;
     }
 
-    public void setShellType(String shellType) {
-        this.shellType = shellType;
+    public void setPublishType(String publishType) {
+        this.publishType = publishType;
     }
 
     public void setStartPrice(int startPrice) {

@@ -16,7 +16,7 @@ public class User extends BmobUser implements Serializable {
     private String logo_url;
     private String mobi;
     private String nickName;
-    private  String sexy;
+    private  String gender;
     private String hometown;
     private String signature;
 
@@ -24,8 +24,8 @@ public class User extends BmobUser implements Serializable {
         return hometown;
     }
 
-    public String getSexy() {
-        return sexy;
+    public String getGender() {
+        return gender;
     }
 
     public String getSignature() {
@@ -36,8 +36,8 @@ public class User extends BmobUser implements Serializable {
         this.hometown = hometown;
     }
 
-    public void setSexy(String sexy) {
-        this.sexy = sexy;
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     public void setSignature(String signature) {
