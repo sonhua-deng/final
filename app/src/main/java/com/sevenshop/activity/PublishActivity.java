@@ -296,7 +296,7 @@ public class PublishActivity extends BaseActivity implements View.OnClickListene
                   goods.setCurrenPrice(price);
                   goods.setPhotoUrls(picUrls);
                   goods.setTitle(title.getText().toString());
-                  goods.setPublishType(shell_type);
+                  goods.setShellType(shell_type);
                   goods.setType(choose);
                   goods.setDes(des.getText().toString());
                   goods.save(new SaveListener<String>() {

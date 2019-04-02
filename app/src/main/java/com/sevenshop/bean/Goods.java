@@ -15,7 +15,7 @@ public class Goods extends BmobObject {
     int startPrice;
     int currenPrice;
     String type;
-    String publishType;
+    String shellType;
     User pulisher;
     User buyer;
 
@@ -27,7 +27,7 @@ public class Goods extends BmobObject {
 
     @Override
     public String toString() {
-        String result=title+des+type+ publishType;
+        String result=title+des+type+ shellType;
         if (pulisher!=null &&pulisher.getNickName()!=null) {
             result+=pulisher.getNickName();
         }
@@ -60,8 +60,8 @@ public class Goods extends BmobObject {
         return photoUrls;
     }
 
-    public String getPublishType() {
-        return publishType;
+    public String getShellType() {
+        return shellType;
     }
 
     public String getType() {
@@ -100,8 +100,8 @@ public class Goods extends BmobObject {
         isShell = shell;
     }
 
-    public void setPublishType(String publishType) {
-        this.publishType = publishType;
+    public void setShellType(String shellType) {
+        this.shellType = shellType;
     }
 
     public void setStartPrice(int startPrice) {

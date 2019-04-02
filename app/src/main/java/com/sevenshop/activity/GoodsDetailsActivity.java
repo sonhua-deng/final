@@ -122,7 +122,7 @@ public class GoodsDetailsActivity extends BaseActivity implements View.OnClickLi
 
 
     private void showUI() {
-        if(mGoods.getPublishType().equals("平台出售")) {
+        if(mGoods.getShellType().equals("平台出售")) {
             startH();
             changeTime();
             mTvBuy.setText("点击拍卖");
@@ -188,7 +188,7 @@ public class GoodsDetailsActivity extends BaseActivity implements View.OnClickLi
                 }
                 break;
             case R.id.tv_buy:
-                if(mGoods.getPublishType().equals("平台出售")) {
+                if(mGoods.getShellType().equals("平台出售")) {
                     showUpdateNickNameDialog();
                 } else {
                     buy();

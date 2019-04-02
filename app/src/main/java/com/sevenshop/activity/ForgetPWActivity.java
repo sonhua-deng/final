@@ -1,13 +1,10 @@
 package com.sevenshop.activity;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 
 import com.sevenshop.R;
-import com.sevenshop.bean.User;
 import com.sevenshop.utils.ListUtils;
 import com.sevenshop.utils.StringUtils;
 import com.sevenshop.utils.ToastUtils;
@@ -21,9 +18,8 @@ import butterknife.OnClick;
 import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
-import cn.bmob.v3.listener.SaveListener;
 
-public class ForgetActivity extends BaseActivity  {
+public class ForgetPWActivity extends BaseActivity  {
 
     @BindView(R.id.toolbar)
     EnjoyshopToolBar mToolBar;
@@ -54,7 +50,7 @@ public class ForgetActivity extends BaseActivity  {
         mToolBar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ForgetActivity.this.finish();
+                ForgetPWActivity.this.finish();
             }
         });
     }
@@ -82,27 +78,27 @@ public class ForgetActivity extends BaseActivity  {
     private void checkPhoneNum() {
 
         if (TextUtils.isEmpty(phone)) {
-            ToastUtils.showSafeToast(ForgetActivity.this, "请输入手机号码");
+            ToastUtils.showSafeToast(ForgetPWActivity.this, "请输入手机号码");
             return;
         }
 
         if (TextUtils.isEmpty(pw_new)) {
-            ToastUtils.showSafeToast(ForgetActivity.this, "请输入密码");
+            ToastUtils.showSafeToast(ForgetPWActivity.this, "请输入密码");
             return;
         }
 
         if (!StringUtils.isMobileNum(phone)) {
-            ToastUtils.showSafeToast(ForgetActivity.this, "请核对手机号码");
+            ToastUtils.showSafeToast(ForgetPWActivity.this, "请核对手机号码");
             return;
         }
 
         if (!StringUtils.isPwdStrong(pw_new)) {
-            ToastUtils.showSafeToast(ForgetActivity.this, "密码太短,请重新设置");
+            ToastUtils.showSafeToast(ForgetPWActivity.this, "密码太短,请重新设置");
             return;
         }
 
         if (pw.equals(pw_new)) {
-            ToastUtils.showSafeToast(ForgetActivity.this, "前后密码不匹配");
+            ToastUtils.showSafeToast(ForgetPWActivity.this, "前后密码不匹配");
             return;
         }
         queryUserData();
@@ -126,8 +122,8 @@ public class ForgetActivity extends BaseActivity  {
                 if (! ListUtils.isEmpty(object)) {
                     jumpRegSecondUi();
                 } else {
-                    ToastUtils.showSafeToast(ForgetActivity.this, "手机号没有被注册");
-                    Intent intent = new Intent(ForgetActivity.this,LoginActivity.class);
+                    ToastUtils.showSafeToast(ForgetPWActivity.this, "手机号没有被注册");
+                    Intent intent = new Intent(ForgetPWActivity.this,LoginActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_SINGLE_TOP);
                     startActivity(intent);
                 }

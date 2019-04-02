@@ -169,7 +169,7 @@
             android:name="cn.bmob.v3.util.BmobContentProvider"
             android:authorities="com.sevenshop.BmobContentProvider" />
 
-        <activity android:name=".activity.ForgetActivity" />
+        <activity android:name=".activity.ForgetPWActivity" />
         <activity android:name=".activity.ProfileSettingActivity" />
         <activity android:name=".activity.MoneyActivity" />
         <activity android:name=".activity.ManagerActivity"></activity>

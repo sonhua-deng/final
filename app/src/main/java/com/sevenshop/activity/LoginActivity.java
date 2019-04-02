@@ -5,16 +5,11 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.TextView;
 
-import com.sevenshop.SevenShopApplication;
 import com.sevenshop.R;
-import com.sevenshop.data.DataManager;
-import com.sevenshop.data.dao.User;
 import com.sevenshop.utils.StringUtils;
 import com.sevenshop.utils.ToastUtils;
 import com.sevenshop.widget.ClearEditText;
 import com.sevenshop.widget.EnjoyshopToolBar;
-
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -77,7 +72,7 @@ public class LoginActivity extends BaseActivity {
                 finish();
                 break;
             case R.id.tv_forgetpw:
-                intent = new Intent(this, ForgetActivity.class);
+                intent = new Intent(this, ForgetPWActivity.class);
                 startActivity(intent);
                 finish();
                 break;

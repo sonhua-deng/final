@@ -28,18 +28,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <RelativeLayout
-                android:paddingLeft="@dimen/detail_activity"
-                android:paddingRight="@dimen/detail_activity"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/detail_activity"
+                android:layout_marginBottom="10dp"
+                android:paddingRight="@dimen/detail_activity">
+
                 <com.facebook.drawee.view.SimpleDraweeView
                     android:id="@+id/avatar"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    fresco:roundAsCircle = "true"
-                    fresco:placeholderImage = "@drawable/default_head"
-                    />
+                    fresco:placeholderImage="@drawable/default_head"
+                    fresco:roundAsCircle="true" />
+
                 <TextView
                     android:id="@+id/tv_user"
                     android:layout_width="wrap_content"
@@ -47,10 +50,11 @@
                     android:layout_alignParentTop="true"
                     android:layout_toEndOf="@+id/avatar"
                     android:layout_toRightOf="@+id/avatar"
+                    android:layout_centerVertical="true"
                     android:gravity="center"
                     android:paddingLeft="40dp"
-                    android:textSize="20sp"
-                    android:text="user"/>
+                    android:text="user"
+                    android:textSize="20sp" />
 
             </RelativeLayout>
 
@@ -103,7 +107,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/tv_desc"
                 android:text="描述"
-                android:textSize="25sp"/>
+                android:textSize="20sp"/>
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/recyclerview"
